@@ -1,9 +1,10 @@
 with payments as (
     select
         orderid as order_id,
-        sum(amount) as amount
-    from (select * from {{ source('stripe', 'payment') }} where status = 'success')
-    group by 1
+        paymentmethod as payment_method,
+        status,
+        amount
+    from {{ source('stripe', 'payment') }}
 )
 
 select * from payments
