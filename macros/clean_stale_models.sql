@@ -12,11 +12,8 @@
 
     {% set queries = run_query(drop_queries).columns[1].values() %}
 
-
     {% for q in queries%}
-
-        {{ log(q, info=TRUE) }}
-
+            {{ log(q, info=True) }}
     {% endfor %}
 
 {% endmacro %}
