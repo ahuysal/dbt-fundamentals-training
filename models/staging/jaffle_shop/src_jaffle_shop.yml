@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: A clone of a Postgres app db.
     database: raw
     schema: jaffle_shop
     tables:
@@ -14,6 +15,7 @@ sources:
               - unique
               - not_null
       - name: orders
+        description: Raw orders data
         loaded_at_field: _etl_loaded_at
         freshness:
           warn_after: {count: 12, period: hour}
