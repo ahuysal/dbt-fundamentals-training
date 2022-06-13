@@ -1,4 +1,4 @@
-{% macro grant_select(schema = target.schema, role = 'accountadmin') %}
+{% macro grant_select(schema = target.schema, role = target.role) %}
 
     {% set sql %}
         grant usage on schema {{ schema }} to role {{ role }};
