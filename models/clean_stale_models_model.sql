@@ -1,1 +1,0 @@
-{{ clean_stale_models() }}
