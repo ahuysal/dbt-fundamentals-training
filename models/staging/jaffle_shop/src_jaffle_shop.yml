@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+    - name: jaffle_shop
+      database: RAW
+      schema: JAFFLE_SHOP
+      tables:
+        - name: customers
+          identifier: CUSTOMERS
+        - name: orders
+          identifier: ORDERS

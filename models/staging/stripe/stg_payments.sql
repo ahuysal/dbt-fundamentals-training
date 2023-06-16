@@ -7,5 +7,6 @@ with payments as (
         {{cents_to_dollars('amount')}} as amount_in_dollars
     from {{ source('stripe', 'payment') }}
 )
-
-select * from payments
+select
+    *
+from payments
