@@ -1,7 +1,0 @@
-with payments as (
-    select * from {{ ref('stg_payments') }}
-)
-
-select *
-  from payments
- where amount < 200

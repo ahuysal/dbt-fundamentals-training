@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: Orders staging table.
+
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        description: "{{ doc('order_status') }}"
+        tests:
+          - accepted_values:
+              values:
+                - returned
+                - completed
+                - return_pending
+                - shipped
+                - placed
+      - name: customer_id
+        tests:
+          - relationships:
+              field: customer_id
+              to: ref('stg_customers')
